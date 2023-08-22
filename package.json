@@ -50,7 +50,7 @@
     "plop": "plop",
     "gen:entry-file": "node scripts/gen-entry-file.mjs",
     "cz": "cz",
-    "release": "cross-env GITLAB_TOKEN=5Y_Rs6C9ecmP-BRD3s96 release-it"
+    "release": "release-it"
   },
   "dependencies": {
     "@rhao/lodash-x": "^0.2.1",
@@ -70,7 +70,6 @@
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.5.0",
     "commitizen": "^4.3.0",
-    "cross-env": "^7.0.3",
     "eslint": "^8.47.0",
     "eslint-define-config": "^1.23.0",
     "fs-extra": "^11.1.1",
