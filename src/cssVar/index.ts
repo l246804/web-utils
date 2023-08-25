@@ -1,4 +1,4 @@
-import type { Recordable } from '@neucloud/types-base'
+import type { Recordable } from '@rhao/types-base'
 import { cssVarNameFactory } from '../cssVarName'
 
 /**

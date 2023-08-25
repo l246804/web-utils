@@ -1,4 +1,4 @@
-import type { AllowNullish } from '@neucloud/types-base'
+import type { AllowNullish } from '@rhao/types-base'
 import type { Numeric } from '../isNumeric'
 import isNumeric from '../isNumeric'
 

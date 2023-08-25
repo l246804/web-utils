@@ -1,5 +1,5 @@
-import type { MaybeGetter } from '@neucloud/types-base'
-import { toValue } from '@neucloud/lodash-x'
+import type { MaybeGetter } from '@rhao/types-base'
+import { toValue } from '@rhao/lodash-x'
 import { assign } from 'lodash-unified'
 
 export interface CreateBEMOptions {
