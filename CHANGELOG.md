@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/l246804/web-utils/compare/v0.1.0...v0.1.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* 🐛 修复类型包引用错误 ([f6c0398](https://github.com/l246804/web-utils/commit/f6c03981da7b614c7f48d40b26170e55369c1ef4))
+
 ## [0.1.0](https://github.com/l246804/web-utils/compare/v0.0.1...v0.1.0) (2023-08-25)
 
 
