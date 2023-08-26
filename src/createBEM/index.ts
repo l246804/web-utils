@@ -38,6 +38,34 @@ function _bem(namespace = '', block = '', blockSuffix = '', element = '', modifi
 
 /**
  * 创建 `BEM` 格式的 `CSS` 类名辅助工具
+ *
+ * @example
+ * ```ts
+ * const ns = createBEM('block', 'el')
+ * ns.b()
+ * // => 'el-block'
+ *
+ * ns.be('header', 'span')
+ * // => 'el-block-header__span'
+ *
+ * ns.bem('header', 'span', 'empty')
+ * // => 'el-block-header__span--empty'
+ *
+ * ns.e('header')
+ * // => 'el-block__header'
+ *
+ * ns.em('span', 'empty')
+ * // => 'el-block__span--empty'
+ *
+ * ns.m('empty')
+ * // => 'el-block--empty'
+ *
+ * ns.is('loading', true)
+ * // => 'is-loading'
+ *
+ * ns.is('loading', false)
+ * // => ''
+ * ```
  */
 export default function createBEM(block: string, namespaceOverrides?: MaybeGetter<string>) {
   const opts = assign({}, createBEM.defaults, { namespace: namespaceOverrides })
