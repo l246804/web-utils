@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/l246804/web-utils/compare/v0.2.0...v0.2.1) (2023-08-30)
+
+
+### Chores
+
+* 🤖 update deps ([1547483](https://github.com/l246804/web-utils/commit/1547483955b19c46b9c42d775f342a2084e75d34))
+
 ## [0.2.0](https://github.com/l246804/web-utils/compare/v0.1.1...v0.2.0) (2023-08-26)
 
 
