@@ -1,5 +1,5 @@
 import { isElement } from 'lodash-unified'
-import type { AllowNullish } from '@rhao/types-base'
+import type { MaybeNullish } from '@rhao/types-base'
 import isClient from '../isClient'
 
 export type ScrollElement = HTMLElement | Window
@@ -11,7 +11,7 @@ const overflowScrollReg = /scroll|auto|overlay/i
  * 获取滚动的祖元素
  */
 export default function getScrollParent(
-  el?: AllowNullish<Element>,
+  el?: MaybeNullish<Element>,
   root: ScrollElement = defaultRoot,
 ) {
   let node = el

@@ -1,4 +1,4 @@
-import type { AllowNullish } from '@rhao/types-base'
+import type { MaybeNullish } from '@rhao/types-base'
 import getFileTypeByExtname from '../getFileTypeByExtname'
 
 /**
@@ -20,10 +20,10 @@ export default function parseContentDisposition(contentDisposition: string) {
   const pattern = /filename=['"]?([^'"]+)['"]?(?:;\s*filename\*=['"]?(?:[\w-]+'+)([^'"]+)['"]?)?/
   const match = contentDisposition.match(pattern)
 
-  let rawFilename: AllowNullish<string> = null
-  let filename: AllowNullish<string> = null
-  let filetype: AllowNullish<string> = null
-  let extname: AllowNullish<string> = null
+  let rawFilename: MaybeNullish<string> = null
+  let filename: MaybeNullish<string> = null
+  let filetype: MaybeNullish<string> = null
+  let extname: MaybeNullish<string> = null
 
   if (match) {
     rawFilename = match[2] || match[1] || ''

@@ -1,4 +1,4 @@
-import type { AllowNullish } from '@rhao/types-base'
+import type { MaybeNullish } from '@rhao/types-base'
 import type { Numeric } from '../isNumeric'
 import isNumeric from '../isNumeric'
 
@@ -23,7 +23,7 @@ import isNumeric from '../isNumeric'
  * // => 'true'
  * ```
  */
-export default function addUnit(value: AllowNullish<Numeric>, unit = 'px') {
+export default function addUnit(value: MaybeNullish<Numeric>, unit = 'px') {
   if (value == null) value = ''
   return isNumeric(value) ? value + unit : String(value)
 }
