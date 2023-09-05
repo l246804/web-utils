@@ -1,7 +1,7 @@
 {
   "name": "@rhao/web-utils",
   "type": "module",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Generic functions of web.",
   "author": "RayHao <https://github.com/l246804>",
   "license": "MIT",

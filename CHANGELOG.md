@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/l246804/web-utils/compare/v0.2.1...v0.3.0) (2023-09-05)
+
+
+### Features
+
+* 🎸 add getFullURL ([7ecc755](https://github.com/l246804/web-utils/commit/7ecc755e39b3cded85f048d8684c8359b53dd4d2))
+
 ## [0.2.1](https://github.com/l246804/web-utils/compare/v0.2.0...v0.2.1) (2023-08-30)
 
 
