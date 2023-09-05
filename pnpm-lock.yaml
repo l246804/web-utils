@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@rhao/lodash-x':
-    specifier: ^0.2.1
-    version: 0.2.1(typescript@5.0.2)
+    specifier: ^0.5.0
+    version: 0.5.0(typescript@5.0.2)
   '@rhao/types-base':
     specifier: ^0.2.0
     version: 0.2.0(typescript@5.0.2)
@@ -1157,11 +1157,11 @@ packages:
       semver: 7.5.1
     dev: true
 
-  /@rhao/lodash-x@0.2.1(typescript@5.0.2):
-    resolution: {integrity: sha512-ANFN75Tf0uV6HxnL1iRNVZpUDS5tkgXf/B4q1JRoT8Jc96/ng6HdKFeyk/7zalthWjbjAbxiYJDYqEN+L9Ol6w==}
+  /@rhao/lodash-x@0.5.0(typescript@5.0.2):
+    resolution: {integrity: sha512-IgUeBA4ebjR3Oix14QGCwqyAeM+9Q695qvvi8lEeH0iZ9dSNF+vUrHOLIi973iPsxxkTHpcLU9XRHtsk4gj+Cg==}
     engines: {node: '>=14'}
     dependencies:
-      '@rhao/types-base': 0.1.3(typescript@5.0.2)
+      '@rhao/types-base': 0.2.0(typescript@5.0.2)
       '@types/lodash': 4.14.197
       '@types/lodash-es': 4.17.8
       lodash: 4.17.21
@@ -1187,15 +1187,6 @@ packages:
     transitivePeerDependencies:
       - inquirer
     dev: true
-
-  /@rhao/types-base@0.1.3(typescript@5.0.2):
-    resolution: {integrity: sha512-86vT+gCx28NFrG5Aeh0O7a9Dc4OXd83BW9DQibvYCkxxw7+HIWoCLOiHLxBINQrNPA1LowTsRW+5xxxyHZvrsQ==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      typescript: '>=5'
-    dependencies:
-      typescript: 5.0.2
-    dev: false
 
   /@rhao/types-base@0.2.0(typescript@5.0.2):
     resolution: {integrity: sha512-t0Q3VtJTxANvnVde9ExdB/rfNNH7Ze0o/vPqsPdViaA5VEIjY/q2npilkmAzBN110eDiJf4Ej3pODGfqjUbMgQ==}

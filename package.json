@@ -53,7 +53,7 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@rhao/lodash-x": "^0.2.1",
+    "@rhao/lodash-x": "^0.5.0",
     "@rhao/types-base": "^0.2.0",
     "@types/file-saver": "^2.0.5",
     "@types/lodash": "^4.14.197",
