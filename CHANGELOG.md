@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/l246804/web-utils/compare/v0.3.0...v0.4.0) (2023-09-11)
+
+
+### Features
+
+* 🎸 add arrayToDictionary ([88fd8a2](https://github.com/l246804/web-utils/commit/88fd8a237786d9ee8879f7ef0844aac8f2af2720))
+* 🎸 add createDictionary ([d5b5a35](https://github.com/l246804/web-utils/commit/d5b5a359aaf56f0969b9c63a50e366b4205d4949))
+
+
+### Chores
+
+* 🤖 防止非客户端环境运行时报错 ([32edd68](https://github.com/l246804/web-utils/commit/32edd687f37a340d4018620322449e34008c2529))
+
 ## [0.3.0](https://github.com/l246804/web-utils/compare/v0.2.1...v0.3.0) (2023-09-05)
 
 
