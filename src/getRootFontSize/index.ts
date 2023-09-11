@@ -1,3 +1,5 @@
+import isClient from '../isClient'
+
 getRootFontSize.__rootFontSize__ = 0
 
 /**
@@ -13,6 +15,8 @@ getRootFontSize.__rootFontSize__ = 0
  * ```
  */
 export default function getRootFontSize(forceUpdate = false) {
+  if (!isClient()) return 0
+
   if (!getRootFontSize.__rootFontSize__ || forceUpdate) {
     const doc = document.documentElement
     const fontSize = doc.style.fontSize || window.getComputedStyle(doc).fontSize

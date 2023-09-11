@@ -1,4 +1,5 @@
 import { assign } from 'lodash-unified'
+import isClient from '../isClient'
 
 export interface PxWithRatioOptions {
   /**
@@ -19,7 +20,7 @@ export interface PxWithRatioOptions {
 }
 
 pxWithRatio.defaults = {
-  realWidth: document.documentElement.offsetWidth,
+  realWidth: isClient() ? document.documentElement.offsetWidth : 0,
   designWidth: 1920,
   precision: 6,
 }
@@ -38,6 +39,7 @@ pxWithRatio.defaults = {
  * ```
  */
 export default function pxWithRatio(value: number) {
+  if (!isClient()) return 0
   const opts = assign({}, pxWithRatio.defaults)
   return +((opts.realWidth / opts.designWidth) * value).toFixed(opts.precision)
 }
