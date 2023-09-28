@@ -42,7 +42,10 @@ export type NormalizeDictionaryObject<T extends DictionaryObject = DictionaryObj
 /**
  * 字典函数类型
  */
-export type DictionaryFn<T extends DictionaryObject> = (this: Dictionary<T>, ...args: any[]) => any
+export type DictionaryFn<T extends DictionaryObject> = (
+  this: Dictionary<T, Recordable>,
+  ...args: any[]
+) => any
 
 /**
  * 字典方法
@@ -58,6 +61,36 @@ export interface DictionaryBuiltinMethods<
   T extends DictionaryObject,
   M extends DictionaryMethods<T> = DictionaryMethods<T>,
 > {
+  /**
+   * 克隆字典，将基于原始参数和新参数创建新字典
+   *
+   * @example
+   * ```ts
+   * const dictionary = createDictionary({
+   *   test: {}
+   * })
+   * dictionary.entries()
+   * // => [ [ 'test', { key: 'test', value: 'test', label: '' } ] ]
+   *
+   * const clonedDictionary = dictionary.clone({ test2: {} }, { isTest2() { return true } })
+   * clonedDictionary.entries()
+   * // => [ [ 'test', { key: 'test', value: 'test', label: '' } ], [ 'test2', { key: 'test2', value: 'test2', label: '' } ] ]
+   *
+   * clonedDictionary.isTest2()
+   * // => true
+   * ```
+   */
+  clone<
+    const T2 extends DictionaryObject,
+    M2 extends DictionaryMethods<T2 & Omit<T, keyof T2>> = DictionaryMethods<
+      T2 & Omit<T, keyof T2>
+    >,
+  >(
+    dict?: T2,
+    methods?: M2,
+    options?: CreateDictionaryOptions,
+  ): Dictionary<T2 & Omit<T, keyof T2>, M2>
+
   /**
    * 获取字典键值集合
    *
@@ -180,7 +213,7 @@ export type Dictionary<
  */
 const builtinMethods: Omit<
   DictionaryBuiltinMethods<DictionaryObject>,
-  'override' | 'clearOverride'
+  'override' | 'clearOverride' | 'clone'
 > = {
   entries() {
     return Object.entries(this)
@@ -273,6 +306,10 @@ export default function createDictionary<
 
   mergedMethods.clearOverride = function (key) {
     delete overrideMethods[key]
+  }
+
+  mergedMethods.clone = function (d2, m2, o2) {
+    return createDictionary(assign({}, dict, d2), assign({}, methods, m2), assign({}, options, o2))
   }
 
   Object.defineProperties(
