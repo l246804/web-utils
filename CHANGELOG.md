@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/l246804/web-utils/compare/v0.4.0...v0.5.0) (2023-09-28)
+
+
+### Features
+
+* 🎸 createDictionary support clone ([7160953](https://github.com/l246804/web-utils/commit/7160953b773bda029f712a95300e881be8ad2f40))
+
 ## [0.4.0](https://github.com/l246804/web-utils/compare/v0.3.0...v0.4.0) (2023-09-11)
 
 
