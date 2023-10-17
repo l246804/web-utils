@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/l246804/web-utils/compare/v0.5.0...v0.5.1) (2023-10-17)
+
+
+### Chores
+
+* 🤖 优化 arrayToDictionary 类型定义 ([d245726](https://github.com/l246804/web-utils/commit/d2457269265b673c26e7f8d9854943a3063cadf6))
+
 ## [0.5.0](https://github.com/l246804/web-utils/compare/v0.4.0...v0.5.0) (2023-09-28)
 
 
