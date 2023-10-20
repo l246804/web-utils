@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.5.0
     version: 0.5.0(typescript@5.0.2)
   '@rhao/types-base':
-    specifier: ^0.2.0
-    version: 0.2.0(typescript@5.0.2)
+    specifier: ^0.2.1
+    version: 0.2.1(typescript@5.0.2)
   '@types/file-saver':
     specifier: ^2.0.5
     version: 2.0.5
@@ -1161,7 +1161,7 @@ packages:
     resolution: {integrity: sha512-IgUeBA4ebjR3Oix14QGCwqyAeM+9Q695qvvi8lEeH0iZ9dSNF+vUrHOLIi973iPsxxkTHpcLU9XRHtsk4gj+Cg==}
     engines: {node: '>=14'}
     dependencies:
-      '@rhao/types-base': 0.2.0(typescript@5.0.2)
+      '@rhao/types-base': 0.2.1(typescript@5.0.2)
       '@types/lodash': 4.14.197
       '@types/lodash-es': 4.17.8
       lodash: 4.17.21
@@ -1188,8 +1188,8 @@ packages:
       - inquirer
     dev: true
 
-  /@rhao/types-base@0.2.0(typescript@5.0.2):
-    resolution: {integrity: sha512-t0Q3VtJTxANvnVde9ExdB/rfNNH7Ze0o/vPqsPdViaA5VEIjY/q2npilkmAzBN110eDiJf4Ej3pODGfqjUbMgQ==}
+  /@rhao/types-base@0.2.1(typescript@5.0.2):
+    resolution: {integrity: sha512-ceN+L1YdLG22RvNx/avCX6A+Gzmk+s282at7btD7FSBIaPFO8bBWJJElltDVkKDYlpeqtm1Ru56fLufVNO/V2w==}
     engines: {node: '>=14'}
     peerDependencies:
       typescript: '>=5'

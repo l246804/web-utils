@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@rhao/lodash-x": "^0.5.0",
-    "@rhao/types-base": "^0.2.0",
+    "@rhao/types-base": "^0.2.1",
     "@types/file-saver": "^2.0.5",
     "@types/lodash": "^4.14.197",
     "@types/lodash-es": "^4.17.8",

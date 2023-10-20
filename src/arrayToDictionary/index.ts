@@ -1,13 +1,14 @@
-import type { Recordable } from '@rhao/types-base'
 import { assign, isString } from 'lodash-unified'
 import type {
   CreateDictionaryOptions,
-  DictionaryItem,
   DictionaryMethods,
+  DictionaryObject,
 } from '../createDictionary'
 import createDictionary from '../createDictionary'
 
-export interface ArrayToDictionaryOptions extends CreateDictionaryOptions {
+type _DictionaryObject<T> = DictionaryObject<{ data: T }>
+
+export interface ArrayToDictionaryOptions<T> extends CreateDictionaryOptions {
   /**
    * 字典项的值键，最好为唯一值字段
    * @default 'value'
@@ -21,7 +22,7 @@ export interface ArrayToDictionaryOptions extends CreateDictionaryOptions {
   /**
    * 字典自定义方法
    */
-  methods?: DictionaryMethods
+  methods?: DictionaryMethods<_DictionaryObject<T>>
 }
 
 /**
@@ -30,15 +31,16 @@ export interface ArrayToDictionaryOptions extends CreateDictionaryOptions {
 arrayToDictionary.defaults = {
   valueKey: 'value',
   labelKey: 'label',
-} as ArrayToDictionaryOptions
+} as ArrayToDictionaryOptions<unknown>
 
 /**
  * 将数组转换为字典
  */
-export default function arrayToDictionary<T>(
-  arr: T[],
-  options?: ArrayToDictionaryOptions,
-) {
+export default function arrayToDictionary<
+  T,
+  Options extends ArrayToDictionaryOptions<any> = ArrayToDictionaryOptions<T>,
+  Methods = Options['methods'],
+>(arr: T[], options?: Options) {
   const { valueKey, labelKey, methods, ...createDictionaryOptions } = assign(
     {},
     arrayToDictionary.defaults,
@@ -46,7 +48,7 @@ export default function arrayToDictionary<T>(
   )
   if (!valueKey) console.warn('[ArrayToDictionary]: valueKey is required.')
 
-  const rawDict: Recordable<DictionaryItem & { data: T }> = {}
+  const rawDict: _DictionaryObject<T> = {}
   for (const item of arr) {
     const obj = assign(
       {},
@@ -58,5 +60,9 @@ export default function arrayToDictionary<T>(
     if (obj.value != null) rawDict[obj.value] = obj
   }
 
-  return createDictionary(rawDict, methods, createDictionaryOptions)
+  return createDictionary(
+    rawDict,
+    methods as Methods extends DictionaryMethods ? Methods : DictionaryMethods<typeof rawDict>,
+    createDictionaryOptions,
+  )
 }

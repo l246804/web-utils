@@ -1,4 +1,4 @@
-import type { Recordable } from '@rhao/types-base'
+import type { NotNullish, Recordable } from '@rhao/types-base'
 import { assign, isFunction, mapValues, toPairs } from 'lodash-unified'
 
 /**
@@ -23,14 +23,17 @@ export type NormalizeDictionaryItem<T extends DictionaryItem = DictionaryItem> =
    * 字典键
    */
   readonly key: string
-  value: NonNullable<T['value']> extends object ? string : NonNullable<T['value']>
-  label: NonNullable<T['label']> extends object ? string : NonNullable<T['label']>
+  value: NotNullish<T['value']>
+  label: NotNullish<T['label']>
 }
 
 /**
  * 字典对象
  */
-export type DictionaryObject = Recordable<DictionaryItem, string>
+export type DictionaryObject<U extends Recordable = Recordable> = Recordable<
+  DictionaryItem & U,
+  string
+>
 
 /**
  * 规范化字典对象
@@ -134,6 +137,44 @@ export interface DictionaryBuiltinMethods<
   values(this: Dictionary<T, M>): (BasicDictionary<T>[keyof T] & Recordable)[]
 
   /**
+   * 根据回调函数查找字典项
+   *
+   * @example
+   * ```ts
+   * const dictionary = createDictionary({
+   *   test: {}
+   * })
+   * dictionary.find((item) => item.value === 'test')
+   * // => { key: 'test', value: 'test', label: '' }
+   * ```
+   */
+  find: Array<BasicDictionary<T>[keyof T] & Recordable>['find']
+
+  /**
+   * 根据 key 获取字典项
+   *
+   * @example
+   * ```ts
+   * const dictionary = createDictionary({
+   *   test: {},
+   *   test2: {
+   *     value: 1,
+   *   }
+   * })
+   *
+   * dictionary.findByKey('test')
+   * // => { key: 'test', value: 'test', label: '' }
+   *
+   * dictionary.findByKey('test2')
+   * // => { key: 'test2', value: 1, label: '' }
+   * ```
+   */
+  findByKey(
+    this: Dictionary<T, M>,
+    key: string,
+  ): (BasicDictionary<T>[keyof T] & Recordable) | undefined
+
+  /**
    * 根据值获取字典项
    *
    * @example
@@ -223,6 +264,12 @@ const builtinMethods: Omit<
   },
   values() {
     return this.entries().map(([, value]) => value)
+  },
+  find(this: Dictionary<any>, predicate) {
+    return this.values().find(predicate)
+  },
+  findByKey(key) {
+    return this.values().find((info) => info.key === key)
   },
   findByValue(value) {
     return this.values().find((info) => info.value === value)
