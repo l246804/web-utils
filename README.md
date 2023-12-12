@@ -1,22 +1,28 @@
-# `@rhao/web-utils`
+# ~~@rhao/web-utils~~
 
-#### 介绍
+> ***废弃声明：该包已被废弃，推荐使用 [`nice-fns`](https://www.npmjs.com/package/nice-fns)，拥有完整的单测和文档！***
 
-web 端常用函数工具库。
+#### 迁移至指南
 
-#### 安装方式
+安装 `nice-fns`
 
-```bash
+```shell
 # npm
-npm i @rhao/web-utils
-# yarn | pnpm
-pnpm add @rhao/web-utils
+npm i nice-fns
+
+# yarn or pnpm
+pnpm add nice-fns
 ```
 
-#### 使用说明
+函数迁移指南：
 
-```js
-import { saveAs } from '@rhao/web-utils'
-
-saveAs('xxx.xlsx')
-```
+1. `arrayToDictionary` 更改调用方式
+2. `createBEM.is` => `classState.is`
+3. `createDictionary` 更改调用方式
+4. `cssVarNameFactory` => `cssVarName`
+5. `getParentScroll` 更改调用方式
+6. `isClient()` => `isClient`
+7. `pxToXxx` 功能优化
+8. `pxWithRatio` => `scalePx`
+9. `saveAs` 优化
+10. `unitToPx` 支持 `vmin`、`vmax`
