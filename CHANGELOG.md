@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/l246804/web-utils/compare/v0.6.0...v0.6.1) (2023-12-13)
+
+
+### Docs
+
+* ✏️ 添加废弃声明 ([409e468](https://github.com/l246804/web-utils/commit/409e4686682a905aafd277428844a837ad5b0165))
+
 ## [0.6.0](https://github.com/l246804/web-utils/compare/v0.5.0...v0.6.0) (2023-10-20)
 
 
